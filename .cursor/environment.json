@@ -1,0 +1,7 @@
+{
+  "name": "brwalsh",
+  "repositoryDependencies": [
+    "github.com/BriWalsh/cursor-user-skills"
+  ],
+  "install": "mkdir -p \"$HOME/.cursor/skills\" \"$HOME/.agents/skills\"\nif ! command -v rsync >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install -y rsync; fi\nrm -rf /tmp/cursor-user-skills\ngh repo clone BriWalsh/cursor-user-skills /tmp/cursor-user-skills || git clone https://github.com/BriWalsh/cursor-user-skills.git /tmp/cursor-user-skills\nrsync -a --exclude '.git' --exclude 'README.md' /tmp/cursor-user-skills/ \"$HOME/.cursor/skills/\"\nrsync -a --exclude '.git' --exclude 'README.md' /tmp/cursor-user-skills/ \"$HOME/.agents/skills/\""
+}
