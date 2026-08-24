@@ -4,14 +4,18 @@
 set -euo pipefail
 
 REPO="BriWalsh/cursor-user-skills"
-SRC="/tmp/cursor-user-skills"
+SRC="$(mktemp -d)"
 DESTS=("$HOME/.cursor/skills" "$HOME/.agents/skills")
+trap 'rm -rf "$SRC"' EXIT
 
-command -v rsync >/dev/null 2>&1 || {
-  sudo apt-get update -qq && sudo apt-get install -y -qq rsync
-}
-
-rm -rf "$SRC"
+if ! command -v rsync >/dev/null 2>&1; then
+  if command -v sudo >/dev/null 2>&1 && command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get update -qq && sudo apt-get install -y -qq rsync
+  else
+    echo "ERROR: rsync is not available and cannot be auto-installed." >&2
+    exit 1
+  fi
+fi
 
 # The token Cursor generates for an agent is scoped to the repository the agent
 # runs on, so reaching a separate private repo needs either the GH_TOKEN secret

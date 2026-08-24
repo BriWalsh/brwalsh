@@ -4,5 +4,5 @@
     "github.com/BriWalsh/cursor-user-skills"
   ],
   "install": "bash .cursor/install-skills.sh",
-  "start": "bash .cursor/install-skills.sh || true"
+  "start": "bash .cursor/install-skills.sh || echo 'WARNING: install-skills.sh failed on start; agent may be missing skills' >&2"
 }
