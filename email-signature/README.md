@@ -9,7 +9,11 @@ The broken circle in the signature was a linked image whose host stopped serving
 3. Delete the broken image in the signature editor.
 4. Re-insert the photo using this direct URL (must end in `.png` and load when opened in a private/incognito window):
 
-   `https://raw.githubusercontent.com/BriWalsh/brwalsh/main/email-signature/Headshot_Brian_Walsh.png`
+   `https://cdn.jsdelivr.net/gh/BriWalsh/brwalsh@f141a82ef790d9e88dbb33bafe3268af63b426c4/email-signature/Headshot_Brian_Walsh.png`
+
+   After this lands on `main`, you can also use:
+
+   `https://cdn.jsdelivr.net/gh/BriWalsh/brwalsh@main/email-signature/Headshot_Brian_Walsh.png`
 
    Or copy the whole block from `signature.html`.
 
