@@ -1,0 +1,68 @@
+# Workstream stub: personal
+# Fill this in when you want ADD / WORK against a personal board (for example
+# BriWalsh user project "Work" #3, or another GitHub Project / tracker).
+# Until fields are filled, builder-add / builder-work must refuse writes and
+# tell you which keys are still TODO — never invent IDs.
+
+id: personal
+display_name: Personal
+ticket_sot: github_project
+status: stub   # remove this line once the block below is complete
+
+github_project:
+  # Example (BriWalsh/brwalsh linked board):
+  # owner: BriWalsh          # user login (not an org)
+  # number: 3
+  # title: Work
+  # url: "https://github.com/users/BriWalsh/projects/3"
+  # node_id: "TODO — run scripts/discover-ai-gateway-project.sh with ORG/owner override"
+  # status_field_id: "TODO"
+  # status:
+  #   backlog: "TODO"
+  #   ready: "TODO"           # keep Ready as human-only if you adopt that convention
+  #   in_progress: "TODO"
+  #   in_review: "TODO"
+  #   done: "TODO"
+  # size_field_id: "TODO"
+  # size:
+  #   XS: "TODO"
+  #   S: "TODO"
+  #   M: "TODO"
+  #   L: "TODO"
+  #   XL: "TODO"
+  owner: null
+  number: null
+  title: null
+  url: null
+  node_id: null
+  status_field_id: null
+  status: {}
+  size_field_id: null
+  size: {}
+
+repos_allowlist:
+  - BriWalsh/brwalsh
+  # add more personal repos as needed
+
+slack:
+  announce_channel: null       # set a channel name when you want socialize drafts
+  announce_channel_id: null
+  mode: draft_only             # keep draft_only until you explicitly change it
+  announce_footer: null
+
+socialize_template: null       # copy/adapt references/socialize/ai-gateway-announce.md
+adapter: references/adapters/github-project.md
+item_templates: references/templates.md
+
+typed_prefixes:
+  - "BUG:"
+  - "FEATURE:"
+  - "TODO:"
+  - "PAIN:"
+  - "DECISION:"
+  - "EXPERIMENT:"
+
+default_create_repo: BriWalsh/brwalsh
+default_status_on_create: backlog
+wip_status: in_progress
+done_status: done
