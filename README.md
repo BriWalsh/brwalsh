@@ -29,6 +29,13 @@ A typical tech nerd with maps of places I wish I lived and pictures of memories 
 [![Medium Badge](https://img.shields.io/badge/-@brijwalsh-03a57a?style=flat-square&labelColor=000000&logo=Medium&link=https://medium.com/@brijwalsh)](https://medium.com/@brijwalsh)
 [![Gmail Badge](https://img.shields.io/badge/-walshbrianj@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:walshbrianj@gmail.com)](mailto:walshbrianj@gmail.com)
 
+## Work tools
+
+Personal Claude Code plugin for AI Gateway ADD / WORK / draft-only Slack socialize:
+
+- [`claude-plugins/work-builder/`](claude-plugins/work-builder/) — install via `/plugin marketplace add BriWalsh/brwalsh` then `/plugin install work-builder`
+- Ops Cursor skills staging: [`bots/`](bots/)
+
 ## 𝗩𝗶𝘀𝗶𝘁𝗼𝗿𝘀
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=brijwalsh.brijwalsh)

@@ -1,0 +1,9 @@
+{
+  "name": "work-builder",
+  "version": "0.1.0",
+  "description": "Personal builder ADD / WORK / socialize skills. Default workstream is AI Gateway (GitHub org project #196). Pass workstream=personal (or another yaml under workstreams/) for additional boards. Slack socialize is draft_only for Gateway.",
+  "author": {
+    "name": "Brian Walsh"
+  },
+  "skills": "./skills/"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "briwalsh-plugins-local",
+  "owner": {
+    "name": "Brian Walsh"
+  },
+  "plugins": [
+    {
+      "name": "work-builder",
+      "source": "./work-builder",
+      "description": "ADD / WORK / socialize for Brian's builder workstreams (AI Gateway first)."
+    }
+  ]
+}

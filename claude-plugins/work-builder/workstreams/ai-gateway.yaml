@@ -1,0 +1,71 @@
+# Workstream: AI Gateway
+# Ported from liatrio-labs/liatrio-lens-builder-plugin PR #13
+# (branch cursor/workstreams-ai-gateway-1029) into BriWalsh/brwalsh.
+#
+# Discovery note: a design brief once said "org project number 3".
+# Live `gh` against org `liatrio` shows:
+#   - #3  = "Liatrio Open Source Support" (not AI Gateway)
+#   - #196 = "AI-Gateway" — confirmed by liatrio/project-ai-gateway AGENTS.md
+# This file points at #196. Re-run scripts/discover-ai-gateway-project.sh to
+# refresh field IDs if the board is rebuilt. Required gh scopes: `project`
+# (or `read:project` for read-only discovery) plus `repo` for issue create.
+
+id: ai-gateway
+display_name: AI Gateway
+ticket_sot: github_project
+
+github_project:
+  org: liatrio
+  number: 196
+  title: AI-Gateway
+  url: "https://github.com/orgs/liatrio/projects/196"
+  node_id: "PVT_kwDOAFdhms4BhWTJ"
+  # Status field — agents may move among Backlog / In progress / In review / Done.
+  # Ready is a human gate: agents must NOT set Status to Ready (AGENTS.md).
+  status_field_id: "PVTSSF_lADOAFdhms4BhWTJzhgSWJw"
+  status:
+    backlog: "f75ad846"       # Landing / draft card destination
+    ready: "61e4505c"         # HUMAN ONLY — do not set from skills
+    in_progress: "47fc9ee4"   # WIP
+    in_review: "df73e18b"
+    done: "98236657"
+  # Priority field exists but currently has no options — leave unset unless options appear.
+  priority_field_id: "PVTSSF_lADOAFdhms4BhWTJzhgSWSY"
+  size_field_id: "PVTSSF_lADOAFdhms4BhWTJzhgSWSc"
+  size:
+    XS: "6c6483d2"
+    S: "f784b110"
+    M: "7515a9f1"
+    L: "817d0097"
+    XL: "db339eb2"
+
+repos_allowlist:
+  - liatrio/project-ai-gateway
+  - liatrio/project-ai-gateway-on-aws
+  - liatrio/project-ai-gateway-on-azure
+
+slack:
+  announce_channel: "#project-ai-gateway"
+  announce_channel_id: "C0BT5J2EX32"   # resolved via Slack search 2026-09-17
+  mode: draft_only                     # NEVER send — paste-ready markdown for Brian
+  announce_footer: null
+
+socialize_template: references/socialize/ai-gateway-announce.md
+adapter: references/adapters/github-project.md
+item_templates: references/templates.md
+
+typed_prefixes:
+  - "BUG:"
+  - "FEATURE:"
+  - "TODO:"
+  - "PAIN:"
+  - "DECISION:"
+  - "EXPERIMENT:"
+
+# Draft cards land as GitHub issues on the chosen allowlisted repo, then are
+# added to Project 196 with Status=Backlog. Preview + human confirm before any
+# write remains mandatory.
+default_create_repo: liatrio/project-ai-gateway
+default_status_on_create: backlog
+wip_status: in_progress
+done_status: done
