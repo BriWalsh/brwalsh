@@ -18,7 +18,7 @@ Before touching the Cloud Agents dashboard, confirm:
   already; nothing to do unless you're testing locally.
 - **The three skills are installed** — either the promoted copies in
   `BriWalsh/cursor-user-skills`, or the staging path (Cloud Agent VM
-  pointed at `BriWalsh/brwalsh:bots/`) described in
+  pointed at `BriWalsh/cursor-ops-kit:bots/`) described in
   [`install-notes.md`](./install-notes.md). Either is fine for the steps
   below; the Cloud Agent config below just needs to know which repo.
 
@@ -65,7 +65,7 @@ Common fields across all three:
 
 | Field | Value |
 |-------|-------|
-| Repo | `BriWalsh/cursor-user-skills` (post-promotion) or `BriWalsh/brwalsh` (staging) |
+| Repo | `BriWalsh/cursor-user-skills` (post-promotion) or `BriWalsh/cursor-ops-kit` (staging) |
 | Branch | `main` |
 | Trigger type | Scheduled |
 | Timezone | `America/Chicago` (named tz, not a UTC offset — Cursor handles DST) |
@@ -184,13 +184,13 @@ unattended.
 ## Post-setup: promotion to `cursor-user-skills`
 
 Everything above works with the skills still living in
-`BriWalsh/brwalsh:bots/` — that's the staging path, and it's fine to run
+`BriWalsh/cursor-ops-kit:bots/` — that's the staging path, and it's fine to run
 schedules against it indefinitely. But it only works if the Cloud Agent
-VM you're scheduling against has access to `bots/` in `brwalsh`. Once
+VM you're scheduling against has access to `bots/` in `cursor-ops-kit`. Once
 you're happy with all three skills, follow the promotion flow in
 [`install-notes.md`](./install-notes.md) to move them into
 `BriWalsh/cursor-user-skills`, which every Cloud Agent VM picks up
 automatically via `.cursor/install-skills.sh`. After promotion, update
-each schedule's **Repo** field from `BriWalsh/brwalsh` to
+each schedule's **Repo** field from `BriWalsh/cursor-ops-kit` to
 `BriWalsh/cursor-user-skills` — everything else in this doc stays the
 same.

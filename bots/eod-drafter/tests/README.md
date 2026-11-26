@@ -45,7 +45,7 @@ harness's copy of that spec, and it's meant to break loudly if
 ### `test_clustering.sh` / `test_clustering.py`
 
 Given `fixtures/gh_activity.json` (6 PRs + 3 PR reviews across 3 repos:
-`project-ai-gateway`, `project-marketing-dashboard`, `brwalsh`) and
+`project-ai-gateway`, `project-marketing-dashboard`, `cursor-ops-kit`) and
 `fixtures/slack_activity.json` (9 messages across 4 channels:
 `#project-ai-gateway`, `#project-marketing-dashboard`,
 `#liatrio-delivery`, `#client-natera-delivery`):

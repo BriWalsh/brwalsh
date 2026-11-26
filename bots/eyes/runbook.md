@@ -48,7 +48,7 @@ fails closed rather than repeating the queue.
 ## Cursor Cloud Agent trigger
 
 - **Repo:** `BriWalsh/cursor-user-skills` after promotion, or
-  `BriWalsh/brwalsh` during staging
+  `BriWalsh/cursor-ops-kit` during staging
 - **Schedule:** Daily at **07:00 America/Chicago**. Use the named timezone so
   Cursor handles DST.
 - **Prompt:**
