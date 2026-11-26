@@ -65,7 +65,7 @@ pick it up.
 
 ## Where these live
 
-**Staging (this PR):** `BriWalsh/brwalsh:bots/*` for review.
+**Staging (this PR):** `BriWalsh/cursor-ops-kit:bots/*` for review.
 
 **Production (post-merge):** move each skill folder to
 `BriWalsh/cursor-user-skills` so `.cursor/install-skills.sh` picks them

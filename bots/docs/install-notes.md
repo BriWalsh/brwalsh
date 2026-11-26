@@ -2,12 +2,12 @@
 
 ## Where these skills live
 
-**Staging (this PR):** `BriWalsh/brwalsh:bots/`. Fine for review and
+**Staging (this PR):** `BriWalsh/cursor-ops-kit:bots/`. Fine for review and
 dry-run testing.
 
 **Production (post-merge):** `BriWalsh/cursor-user-skills`, one folder per
 skill at the repo root. That way `.cursor/install-skills.sh` in
-`brwalsh` picks them up on every Cloud Agent VM with no code changes.
+`cursor-ops-kit` picks them up on every Cloud Agent VM with no code changes.
 
 ## Moving them — recommended (git mv-style)
 
@@ -21,19 +21,19 @@ Once this PR is merged, do a follow-up in `cursor-user-skills`:
 
 ```bash
 git clone git@github.com:BriWalsh/cursor-user-skills.git
-git clone git@github.com:BriWalsh/brwalsh.git
+git clone git@github.com:BriWalsh/cursor-ops-kit.git
 
 cd cursor-user-skills
 git checkout -b add-delivery-principal-ops-kit
 
-cp -r ../brwalsh/bots/eyes .
-cp -r ../brwalsh/bots/eod-drafter .
-cp -r ../brwalsh/bots/follow-up-radar .
+cp -r ../cursor-ops-kit/bots/eyes .
+cp -r ../cursor-ops-kit/bots/eod-drafter .
+cp -r ../cursor-ops-kit/bots/follow-up-radar .
 
 mkdir -p _delivery-principal-ops-kit
-cp -r ../brwalsh/bots/docs _delivery-principal-ops-kit/docs
-cp    ../brwalsh/bots/README.md _delivery-principal-ops-kit/README.md
-cp    ../brwalsh/bots/ROADMAP.md _delivery-principal-ops-kit/ROADMAP.md
+cp -r ../cursor-ops-kit/bots/docs _delivery-principal-ops-kit/docs
+cp    ../cursor-ops-kit/bots/README.md _delivery-principal-ops-kit/README.md
+cp    ../cursor-ops-kit/bots/ROADMAP.md _delivery-principal-ops-kit/ROADMAP.md
 
 # The skills reference ../ROADMAP.md from their SKILL.md and runbook.md
 # files. Under bots/ the parent path resolves to bots/ROADMAP.md; after
@@ -59,13 +59,13 @@ The `sed` block is the only load-bearing part. Skills themselves don't
 `require` the docs at runtime — they're for humans — but the docs must
 resolve when a human reader clicks them from a skill's SKILL.md.
 
-Then, in a follow-up PR to `brwalsh`, delete the skill folders (leaving
+Then, in a follow-up PR to `cursor-ops-kit`, delete the skill folders (leaving
 `bots/README.md`, `bots/ROADMAP.md`, and `bots/docs/` as the kit's
 documentation home page).
 
 ## Alternative — install-skills.sh pulls from both
 
-If Brian prefers a single source of truth in `brwalsh` (iterate here,
+If Brian prefers a single source of truth in `cursor-ops-kit` (iterate here,
 promote to `cursor-user-skills` only when stable), extend
 `.cursor/install-skills.sh`:
 
@@ -77,17 +77,17 @@ _prev_trap="$(trap -p EXIT | sed "s/^trap -- '//; s/' EXIT$//")"
 trap "rm -rf \"\$BOTS_SRC\"; $_prev_trap" EXIT
 
 if [ -n "${GH_TOKEN:-}" ] && git clone --depth 1 --quiet \
-    "https://x-access-token:${GH_TOKEN}@github.com/BriWalsh/brwalsh.git" \
+    "https://x-access-token:${GH_TOKEN}@github.com/BriWalsh/cursor-ops-kit.git" \
     "$BOTS_SRC" 2>/dev/null; then
   # Strip the token from .git/config before anything (rsync, cat, cp)
   # touches the checkout. Otherwise the bearer credential persists in
   # the temp clone and, worse, can be rsynced into destinations that
   # don't --exclude '.git' correctly.
   git -C "$BOTS_SRC" remote set-url origin \
-    "https://github.com/BriWalsh/brwalsh.git"
+    "https://github.com/BriWalsh/cursor-ops-kit.git"
 elif ! git clone --depth 1 --quiet \
-       "https://github.com/BriWalsh/brwalsh.git" "$BOTS_SRC" 2>/dev/null; then
-  echo "WARN: could not clone brwalsh for ops-kit skills; skipping." >&2
+       "https://github.com/BriWalsh/cursor-ops-kit.git" "$BOTS_SRC" 2>/dev/null; then
+  echo "WARN: could not clone cursor-ops-kit for ops-kit skills; skipping." >&2
   BOTS_SRC=""
 fi
 

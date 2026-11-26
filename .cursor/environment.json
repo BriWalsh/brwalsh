@@ -1,5 +1,5 @@
 {
-  "name": "brwalsh",
+  "name": "cursor-ops-kit",
   "repositoryDependencies": [
     "github.com/BriWalsh/cursor-user-skills"
   ],

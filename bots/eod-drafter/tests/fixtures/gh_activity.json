@@ -3,7 +3,7 @@
   "known_repos": [
     "project-ai-gateway",
     "project-marketing-dashboard",
-    "brwalsh",
+    "cursor-ops-kit",
     "project-forge-migration"
   ],
   "prs": [
@@ -56,8 +56,8 @@
       "number": 8,
       "title": "Heartbeat DMs on clean runs",
       "state": "MERGED",
-      "url": "https://github.com/BriWalsh/brwalsh/pull/8",
-      "repository": { "nameWithOwner": "BriWalsh/brwalsh" },
+      "url": "https://github.com/BriWalsh/cursor-ops-kit/pull/8",
+      "repository": { "nameWithOwner": "BriWalsh/cursor-ops-kit" },
       "updatedAt": "2026-09-15T09:30:00-05:00",
       "author": "brian-fake"
     }
@@ -83,8 +83,8 @@
       "pull_request": {
         "number": 6,
         "title": "Tidy README formatting",
-        "url": "https://github.com/BriWalsh/brwalsh/pull/6",
-        "repository": { "nameWithOwner": "BriWalsh/brwalsh" }
+        "url": "https://github.com/BriWalsh/cursor-ops-kit/pull/6",
+        "repository": { "nameWithOwner": "BriWalsh/cursor-ops-kit" }
       }
     }
   ]

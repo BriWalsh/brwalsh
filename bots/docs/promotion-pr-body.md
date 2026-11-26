@@ -49,5 +49,5 @@ GPT-5.6, Gemini 3.8) of Brian's X engagement and Slack workflow signals,
 which converged on these three skills. A follow-up code review surfaced a
 client-data leak risk in the original `follow-up-radar` design, which
 pulled scope back to the safety-first v0.1 described above. It staged and
-shipped as [`BriWalsh/brwalsh#4`](https://github.com/BriWalsh/brwalsh/pull/4)
+shipped as [`BriWalsh/cursor-ops-kit#4`](https://github.com/BriWalsh/cursor-ops-kit/pull/4)
 before this promotion.

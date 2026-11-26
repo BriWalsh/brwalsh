@@ -2,7 +2,7 @@
 
 ## Cursor Cloud Agent trigger
 
-- **Repo:** `BriWalsh/cursor-user-skills` (after moving) or `BriWalsh/brwalsh`
+- **Repo:** `BriWalsh/cursor-user-skills` (after moving) or `BriWalsh/cursor-ops-kit`
   (staging)
 - **Schedule:** Weekdays at **16:00 America/Chicago**. Skip Sat/Sun and US
   federal holidays.
